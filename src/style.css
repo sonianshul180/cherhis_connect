@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --swiper-theme-color: #6366f1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans text-dark bg-light;
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+.card-hover {
+  transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.text-gradient {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #6366f1, #8b5cf6);
+}
+
+.section-title {
+  @apply text-4xl md:text-5xl font-bold mb-6 font-display;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, #6366f1, #8b5cf6);
+}
+
+.section-title.centered::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav-link {
+  @apply relative text-white font-medium hover:text-white/80 transition-colors;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.testimonial-card {
+  @apply bg-white rounded-xl p-6 shadow-lg relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  @apply text-6xl text-primary/20 absolute -top-2 -left-2 font-display;
+}
+
+.partner-logo {
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.partner-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+.contact-input {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all;
+}
+
+.btn-primary {
+  @apply bg-primary text-white font-medium py-3 px-6 rounded-lg hover:bg-primary/90 transition-all shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary font-medium py-3 px-6 rounded-lg hover:bg-gray-100 transition-all border border-primary shadow-md hover:shadow-lg;
+}
+
+.gallery-item {
+  @apply relative overflow-hidden rounded-lg;
+}
+
+.gallery-overlay {
+  @apply absolute inset-0 bg-dark/70 opacity-0 transition-opacity flex items-center justify-center;
+}
+
+.gallery-item:hover .gallery-overlay {
+  @apply opacity-100;
+}
+
+.category-card {
+  @apply relative overflow-hidden rounded-xl shadow-lg;
+}
+
+.category-content {
+  @apply absolute inset-0 bg-gradient-to-t from-dark/80 to-transparent p-6 flex flex-col justify-end text-white;
+}
+
+.scroll-top {
+  @apply fixed bottom-6 right-6 bg-primary text-white p-3 rounded-full shadow-lg z-50 opacity-0 invisible;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
