@@ -8,13 +8,13 @@
     "typeRoots": ["./node_modules/@types", "./src/types"],
 
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": true,
 
-    "types": ["aos"],
+    "types": [],
 
     /* Linting */
     "strict": true,
